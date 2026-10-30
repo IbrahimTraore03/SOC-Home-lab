@@ -1,5 +1,7 @@
 # SOC-hemmalabb – Wazuh, Sysmon & Kali
 
+Har min AI som skriver om det jag gör för att bli mer effektiv med tid. 
+
 ## Sammanfattning
 Ett eget mini-SOC: Kali angriper en Windows-maskin, loggarna samlas i Wazuh (SIEM) och attackerna upptäcks och analyseras. *(Under uppbyggnad.)*
 
