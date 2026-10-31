@@ -1,0 +1,16 @@
+<!-- Egen regel: portskanning mot Windows (MITRE T1046) -->
+<!-- Placeras i /var/ossec/etc/rules/local_rules.xml på Wazuh-servern -->
+<!-- Kräver: auditpol "Filtering Platform Packet Drop" failure, och att 5152 inte filtreras bort i agentens ossec.conf -->
+
+<group name="local,windows,portscan,">
+  <rule id="100100" level="10" frequency="20" timeframe="60" ignore="120">
+    <if_matched_sid>60104</if_matched_sid>
+    <field name="win.system.eventID">^5152$</field>
+    <same_field>win.eventdata.sourceAddress</same_field>
+    <different_field>win.eventdata.destPort</different_field>
+    <description>Possible port scan from $(win.eventdata.sourceAddress): 20+ blocked ports within 60 seconds</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+</group>
