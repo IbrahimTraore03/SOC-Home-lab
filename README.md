@@ -1,4 +1,3 @@
-[senaste.md](https://github.com/user-attachments/files/34225290/senaste.md)
 # SOC-hemmalabb – Wazuh, Sysmon & Kali
 
 ## Sammanfattning
